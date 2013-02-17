@@ -16,3 +16,8 @@ config.browser_test = 'Chrome'
 
 from sst.actions import *
 
+Todo:
+* try using nose to run class based (and procedural) tests, look at multiprocessing
+* see if browser_type can be passed, rather than hardcoded into class tests
+* determine if project install should be multi-user local, single-user local, or global
+* Look at https://developer.mozilla.org/en-US/docs/Marionette
