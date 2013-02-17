@@ -23,5 +23,7 @@ Todo:
 * Look at https://developer.mozilla.org/en-US/docs/Marionette
 
 * need package-level test suites not to be run for each checkin (snapshot commit)
+* declaration of dependencies (account snapshot, for instance)
 * could piggyback off of portal's unit test syntax for simple (not CI related) manual runs
 * message queue to run tests on snapshot commit
+* screenshots and checkins of them/visual diffs
