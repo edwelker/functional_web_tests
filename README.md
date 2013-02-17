@@ -17,7 +17,11 @@ config.browser_test = 'Chrome'
 from sst.actions import *
 
 Todo:
-* try using nose to run class based (and procedural) tests, look at multiprocessing
+* try using nose to run class based (and procedural) tests, look at multiprocessing (or see if node can do that for me)
 * see if browser_type can be passed, rather than hardcoded into class tests
 * determine if project install should be multi-user local, single-user local, or global
 * Look at https://developer.mozilla.org/en-US/docs/Marionette
+
+* need package-level test suites not to be run for each checkin (snapshot commit)
+* could piggyback off of portal's unit test syntax for simple (not CI related) manual runs
+* message queue to run tests on snapshot commit
