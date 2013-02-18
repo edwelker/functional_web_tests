@@ -16,6 +16,8 @@ config.browser_test = 'Chrome'
 
 from sst.actions import *
 
+nosetests test*.py
+
 Todo:
 * try using nose to run class based (and procedural) tests, look at multiprocessing (or see if node can do that for me)
 * see if browser_type can be passed, rather than hardcoded into class tests

@@ -2,6 +2,7 @@ Pygments==1.6
 bpython==0.12
 extras==0.0.3
 junitxml==0.7
+nose==1.2.1
 selenium==2.29.0
 sst==0.2.2
 testtools==0.9.29
