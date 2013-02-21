@@ -17,9 +17,13 @@ config.browser_test = 'Chrome'
 from sst.actions import *
 
 nosetests test*.py
+nodetests --with-xunit test*.py
+or
+nodetests --processes=2 test*.py
+
+but nodetests --with-xunit --processes=2 test*.py  will not work
 
 Todo:
-* try using nose to run class based (and procedural) tests, look at multiprocessing (or see if node can do that for me)
 * see if browser_type can be passed, rather than hardcoded into class tests
 * determine if project install should be multi-user local, single-user local, or global
 * Look at https://developer.mozilla.org/en-US/docs/Marionette

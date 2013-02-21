@@ -1,6 +1,5 @@
 from sst.actions import *
 from sst import runtests
-import unittest2 as unittest
 
 class PMMobile_HomePage(runtests.SSTTestCase):
     "Test the PubMed Mobile homepage"
@@ -25,7 +24,7 @@ class PMMobile_HomePage(runtests.SSTTestCase):
         assert_url_contains('?term=Red+Sox')
         assert_title_contains('Red Sox')
 
-class PMMobile_SearchResults(runtests.SSTTestCase, unittest.TestCase):
+class PMMobile_SearchResults(runtests.SSTTestCase):
     "Test the PubMed Mobile search results page"
     browser_type = 'PhantomJS'
 
@@ -35,8 +34,7 @@ class PMMobile_SearchResults(runtests.SSTTestCase, unittest.TestCase):
         assert_attribute('srch', 'value', 'Red Sox')
         results = get_elements_by_xpath("//ul[@class='r']/li/a")
         
-        #need unittest2 assertEqual
-        self.assertEqual( len(results), 25)
+        assert( len(results), 10)
 
 class PMMobile_AbstractPage(runtests.SSTTestCase):
     "Test the PubMed Mobile Abstract Page"
@@ -48,3 +46,6 @@ class PMMobile_AbstractPage(runtests.SSTTestCase):
         assert_title_contains('When the Red Sox shocked the Yankees: c - PubMed Mobile')
 
         assert_css_property( get_element_by_css('h2'), 'font-size', '16px')
+
+def test():
+    assert False
