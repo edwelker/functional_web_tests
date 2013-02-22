@@ -25,6 +25,8 @@ but nodetests --with-xunit --processes=2 test*.py  will not work
 
 Todo:
 * need to be able to pass in the domain to set as the base_url
+* so node will test imports, and since stt.actions import *, it will fail on run_tests() and end_test(). SST should be refactored to be classes and start/end (utility functions)
+
 * see if browser_type can be passed, rather than hardcoded into class tests
 * determine if project install should be multi-user local, single-user local, or global
 * Look at https://developer.mozilla.org/en-US/docs/Marionette
