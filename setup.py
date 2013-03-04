@@ -1,6 +1,7 @@
 !#/usr/bin/env python
 # vim:fileencoding=utf-8
 from distutils.core import setup
+from future import unicode_literals
 
 requirements = [item for item in open('requirements.txt').read().splitlines()]
 
