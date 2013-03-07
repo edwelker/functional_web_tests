@@ -46,6 +46,9 @@ class PMMobile_SearchResults(runtests.SSTTestCase):
         
         assert( len(results) == 10)
 
+        for result in results:
+            assert_css_property(result, 'font-size', '14px')
+
 class PMMobile_AbstractPage(runtests.SSTTestCase):
     "Test the PubMed Mobile Abstract Page"
     browser_type = 'PhantomJS'
