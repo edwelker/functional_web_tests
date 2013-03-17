@@ -1,5 +1,5 @@
 from sst.actions import *
-from urlparse import urlparse, urljoin
+from urlparse import urljoin
 
 #just go to a url
 go_to('http://qa.ncbi.nlm.nih.gov/pmc')
@@ -20,28 +20,28 @@ click_link(record)
 assert_url('http://qa.ncbi.nlm.nih.gov/pmc/articles/PMC2848379/')
 
 #click on the Goto: link
-click_link( get_elements_by_css("a.jig-ncbiinpagenav-goto-heading")[0] )
+click_link(get_elements_by_css("a.jig-ncbiinpagenav-goto-heading")[0])
 
 #make sure that the popup is visible on the page
-popup = assert_displayed( get_element_by_css('.ui-ncbilinksmenu') )
+popup = assert_displayed(get_element_by_css('.ui-ncbilinksmenu'))
 
 #get the link called "Footnotes"
-link_to_click = popup.find_element_by_link_text('Footnotes')
+footnotes_link = popup.find_element_by_link_text('Footnotes')
 
-#click on that link
-click_link( link_to_click )
+#click on
+click_link(footnotes_link)
 
 #get all the H2 elements, and then give me the only one with text "Footnotes"
-footnote_header = (x for x in get_elements(tag='h2') if x.text=='Footnotes').next()
+footnote_header = (x for x in get_elements(tag='h2') if x.text == 'Footnotes').next()
 
 #print this stuff, because the scroll isn't working
 print footnote_header.get_attribute('id')
 print footnote_header.location
 print get_current_url()
 
-new_url = urljoin( get_current_url(), "#" + footnote_header.get_attribute('id') )
-go_to( new_url )
-new_footnote_header = (x for x in get_elements(tag='h2') if x.text=='Footnotes').next()
+new_url = urljoin(get_current_url(), "#" + footnote_header.get_attribute('id'))
+go_to(new_url)
+new_footnote_header = (x for x in get_elements(tag='h2') if x.text == 'Footnotes').next()
 
 print new_footnote_header.location
 print get_current_url()
