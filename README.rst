@@ -21,14 +21,23 @@ nosetests --verbose test*.py
 (see https://github.com/nose-devs/nose/issues/2 , nosetests --with-xunit --processes=2 won't work)
 
 Todo:
-* try using nose to run class based (and procedural) tests
+High
+DCLT-279, 201, 196
+* document inherited assertions
+* test csv imports
 * need to be able to pass in the domain to set as the base_url
-* see if browser_type can be passed, rather than hardcoded into class tests
 * determine if project install should be multi-user local, single-user local, or global
-* Look at https://developer.mozilla.org/en-US/docs/Marionette
+* create_testcase command or whatever to create class-based test
+* start editing the documentation
+* are docstrings passed through on failure?
+* remote name should be the test directory
 
+Low
 * need package-level test suites not to be run for each checkin (snapshot commit)
 * declaration of dependencies (account snapshot, for instance)
 * could piggyback off of portal's unit test syntax for simple (not CI related) manual runs
-* message queue to run tests on snapshot commit
+* queue to run tests on snapshot commit
 * screenshots and checkins of them/visual diffs
+
+Very Low
+* Look at https://developer.mozilla.org/en-US/docs/Marionette
